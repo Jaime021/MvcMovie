@@ -12,7 +12,7 @@ namespace MvcMovie.Controllers
         private MovieDBContext db = new MovieDBContext();
 
         // GET: Movies
-        public ActionResult Index(string movieGenre, string searchString)
+        public ActionResult Index(string movieGenre, string searchString, string Director)
         {
             var GenreLst = new List<string>();
     
@@ -22,7 +22,7 @@ namespace MvcMovie.Controllers
                            select d.Genre;
 
             GenreLst.AddRange(GenreQry.Distinct());
-            ViewBag.movieGenre = new SelectList(GenreLst,"Action");
+            ViewBag.movieGenre = new SelectList(GenreLst);
 
             var movies = from m in db.Movies
                          select m;
@@ -30,6 +30,11 @@ namespace MvcMovie.Controllers
             if (!string.IsNullOrEmpty(searchString))
             {
                 movies = movies.Where(s => s.Title.Contains(searchString));
+            }
+
+            if (!string.IsNullOrEmpty(Director))
+            {
+                movies = movies.Where(d => d.Director.Contains(Director));
             }
 
             if (!string.IsNullOrEmpty(movieGenre))
@@ -66,7 +71,7 @@ namespace MvcMovie.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
+        public ActionResult Create([Bind(Include = "ID,Title,Director,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +103,7 @@ namespace MvcMovie.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
+        public ActionResult Edit([Bind(Include = "ID,Title,Director,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
             if (ModelState.IsValid)
             {

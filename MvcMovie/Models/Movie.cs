@@ -12,6 +12,9 @@ namespace MvcMovie.Models
         [StringLength(60, MinimumLength = 3)]
         public string Title { get; set; }
 
+        [StringLength(60, MinimumLength = 3)]
+        public string Director { get; set; }
+
         [Display(Name = "Release Date"),DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ReleaseDate { get; set; }

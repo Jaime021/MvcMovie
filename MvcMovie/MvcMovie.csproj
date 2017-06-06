@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201706061705461_DataAnnotations.Designer.cs">
       <DependentUpon>201706061705461_DataAnnotations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706061858569_Director.cs" />
+    <Compile Include="Migrations\201706061858569_Director.Designer.cs">
+      <DependentUpon>201706061858569_Director.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -263,7 +267,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -328,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706061705461_DataAnnotations.resx">
       <DependentUpon>201706061705461_DataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061858569_Director.resx">
+      <DependentUpon>201706061858569_Director.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

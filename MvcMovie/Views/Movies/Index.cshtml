@@ -9,15 +9,20 @@
     {
     <p>
         Genre: @Html.DropDownList("movieGenre", "All")
-        Title: @Html.TextBox("SearchString")
+        Title: @Html.TextBox("SearchString")        
+        Director: @Html.TextBox("Director")
         <input type="submit" value="Filter" />
-    </p>
+        </p>
+
     }
    
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Director)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ReleaseDate)
@@ -38,6 +43,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Director)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ReleaseDate)
