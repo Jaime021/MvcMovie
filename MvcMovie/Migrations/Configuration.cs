@@ -25,7 +25,7 @@ namespace MvcMovie.Migrations
                     ReleaseDate = DateTime.Parse("1989-1-11"),
                     Genre = "Romantic Comedy",
                     Score = 3M,
-                    Stars = "6",
+                    Stars = "3",
                     Rating = "PG",
                     Price = 7.99M
                    
@@ -38,7 +38,7 @@ namespace MvcMovie.Migrations
                      ReleaseDate = DateTime.Parse("1984-3-13"),
                      Genre = "Comedy",
                      Score = 7.8M,
-                     Stars = "5.6",
+                     Stars = "7.8",
                      Rating = "PG",
                      Price = 8.99M
                  },
@@ -50,7 +50,7 @@ namespace MvcMovie.Migrations
                      ReleaseDate = DateTime.Parse("1986-2-23"),
                      Genre = "Comedy",
                      Score = 3.2M,
-                     Stars = "9.5",
+                     Stars = "3.2",
                      Rating = "R",
                      Price = 9.99M
                  },
@@ -63,7 +63,7 @@ namespace MvcMovie.Migrations
                      ReleaseDate = DateTime.Parse("1972-3-24"),
                      Genre = "Drama",
                      Score = 9.2M,
-                     Stars = "7",
+                     Stars = "9.2",
                      Rating = "R",
                      Price = 9.99M
                },
@@ -75,7 +75,7 @@ namespace MvcMovie.Migrations
                    ReleaseDate = DateTime.Parse("1959-4-15"),
                    Genre = "Western",
                    Score = 8,
-                   Stars = "4.2",
+                   Stars = "8",
                    Rating = "G",
                    Price = 3.99M
                }
