@@ -223,6 +223,14 @@
     <Compile Include="Migrations\201706061858569_Director.Designer.cs">
       <DependentUpon>201706061858569_Director.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706062232149_Score.cs" />
+    <Compile Include="Migrations\201706062232149_Score.Designer.cs">
+      <DependentUpon>201706062232149_Score.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706071539254_Stars.cs" />
+    <Compile Include="Migrations\201706071539254_Stars.Designer.cs">
+      <DependentUpon>201706071539254_Stars.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -234,7 +242,10 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -243,6 +254,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -337,6 +353,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706061858569_Director.resx">
       <DependentUpon>201706061858569_Director.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706062232149_Score.resx">
+      <DependentUpon>201706062232149_Score.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706071539254_Stars.resx">
+      <DependentUpon>201706071539254_Stars.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

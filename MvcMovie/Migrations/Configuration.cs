@@ -11,7 +11,7 @@ namespace MvcMovie.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "MvcMovie.Models.MovieDBContext";
         }
 
@@ -24,8 +24,11 @@ namespace MvcMovie.Migrations
                     Director = "Bob The Director",
                     ReleaseDate = DateTime.Parse("1989-1-11"),
                     Genre = "Romantic Comedy",
+                    Score = 3M,
+                    Stars = "6",
                     Rating = "PG",
                     Price = 7.99M
+                   
                 },
 
                  new Movie
@@ -34,6 +37,8 @@ namespace MvcMovie.Migrations
                      Director = "Bob The Director",
                      ReleaseDate = DateTime.Parse("1984-3-13"),
                      Genre = "Comedy",
+                     Score = 7.8M,
+                     Stars = "5.6",
                      Rating = "PG",
                      Price = 8.99M
                  },
@@ -44,9 +49,24 @@ namespace MvcMovie.Migrations
                      Director = "Bob brother The Director",
                      ReleaseDate = DateTime.Parse("1986-2-23"),
                      Genre = "Comedy",
+                     Score = 3.2M,
+                     Stars = "9.5",
                      Rating = "R",
                      Price = 9.99M
                  },
+                 
+
+               new Movie
+               {
+                     Title = "The Godfather",
+                     Director = "Francis Ford Coppola",
+                     ReleaseDate = DateTime.Parse("1972-3-24"),
+                     Genre = "Drama",
+                     Score = 9.2M,
+                     Stars = "7",
+                     Rating = "R",
+                     Price = 9.99M
+               },
 
                new Movie
                {
@@ -54,6 +74,8 @@ namespace MvcMovie.Migrations
                    Director = "Michael Bay",
                    ReleaseDate = DateTime.Parse("1959-4-15"),
                    Genre = "Western",
+                   Score = 8,
+                   Stars = "4.2",
                    Rating = "G",
                    Price = 3.99M
                }

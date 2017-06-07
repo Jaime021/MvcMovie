@@ -1,6 +1,13 @@
 ﻿@model IEnumerable<MvcMovie.Models.Movie>
 @{
     ViewBag.Title = "Index";
+   // int six = 6;
+  
+   // List < string > list = new List<>();
+   // list.Add("Star","Stars");
+   
+   
+
 }
 <h2>Index</h2>
 <p>
@@ -11,11 +18,14 @@
         Genre: @Html.DropDownList("movieGenre", "All")
         Title: @Html.TextBox("SearchString")        
         Director: @Html.TextBox("Director")
+        
+
         <input type="submit" value="Filter" />
         </p>
-
+        
     }
    
+
 <table class="table">
     <tr>
         <th>
@@ -27,19 +37,32 @@
         <th>
             @Html.DisplayNameFor(model => model.ReleaseDate)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Genre)
         </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Score)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Stars)
+        </th>
+      
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Rating)
         </th>
+
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Title)
@@ -53,6 +76,28 @@
         <td>
             @Html.DisplayFor(modelItem => item.Genre)
         </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Score)
+        </td>
+
+        <td>
+          
+            @{
+
+                int num = 0;
+                Int32.TryParse(item.Stars.Substring(0,1), System.Globalization.NumberStyles.Integer, null, out num);
+                string[] Start = new string[num];
+
+                    foreach (string print in Start)
+                    {
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        }
+
+                    }
+
+         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.Price)
         </td>

@@ -6,9 +6,15 @@
     <title>@ViewBag.Title -Movie App</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/fontawesome")
+
+
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
 
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -33,6 +39,8 @@
         @RenderBody()
         <hr />
         <footer>
+            <i class="fa fa-star" aria-hidden="true"></i>
+
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
