@@ -25,7 +25,7 @@ namespace MvcMovie.Models
         public string Genre { get; set; }
 
         
-        [Range(1, 10)]
+        [Range(0, 10)]
         public decimal Score { get; set; }
 
         [StringLength(4)]

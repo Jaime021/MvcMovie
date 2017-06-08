@@ -53,6 +53,27 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Stars)
+        </dt>
+
+        <dd>
+            @{  
+
+                int num = Convert.ToInt32(Math.Floor(Model.Score));
+                int[] items = new int[num];
+                foreach (int las in items)
+                {
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                }
+            }
+
+            
+           
+
+        </dd>
+
+
+        <dt>
             @Html.DisplayNameFor(model => model.Price)
         </dt>
 
