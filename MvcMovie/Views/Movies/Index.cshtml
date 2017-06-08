@@ -25,8 +25,9 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
+      
         <th>
             @Html.DisplayNameFor(model => model.Director)
         </th>
@@ -39,7 +40,7 @@
         </th>
 
         <th>
-            @Html.DisplayNameFor(model => model.Score)
+            @Html.ActionLink("Score", "Index", new { sortOrder = ViewBag.RateSortParm })
         </th>
 
         <th>
@@ -49,9 +50,8 @@
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
-
         <th>
-            @Html.DisplayNameFor(model => model.Rating)
+            @Html.ActionLink("Rating", "Index", new { sortOrder = ViewBag.RateSortParm })
         </th>
 
         <th></th>

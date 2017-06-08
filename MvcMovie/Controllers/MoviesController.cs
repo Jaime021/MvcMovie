@@ -14,6 +14,9 @@ namespace MvcMovie.Controllers
         // GET: Movies
         public ActionResult Index(string movieGenre, string searchString, string Director, string sortOrder)
         {
+            ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "Title_desc"  : "";
+            ViewBag.RateSortParm = sortOrder == "Score" ? "Rating" : "Score";
+
             var movies = from m in db.Movies
                          select m;
 
@@ -28,8 +31,17 @@ namespace MvcMovie.Controllers
 
             switch (sortOrder)
             {
+                case "Title_desc":
+                    movies = movies.OrderByDescending(m => m.Title);
+                    break;
+                case "Score":
+                    movies = movies.OrderByDescending(m => m.Score);
+                    break;
+                case "Rating":
+                    movies = movies.OrderBy(m => m.Rating);
+                    break;
                 default:
-                    movies = movies.OrderByDescending(t => t.Score);
+                    movies = movies.OrderBy(m => m.Title);
                     break;
             }
 
