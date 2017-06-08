@@ -28,7 +28,7 @@ namespace MvcMovie.Models
         [Range(1, 10)]
         public decimal Score { get; set; }
 
-
+        [StringLength(4)]
         public string Stars { get; set; }
 
 

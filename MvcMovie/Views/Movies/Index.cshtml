@@ -74,23 +74,32 @@
         </td>
 
         <td>
-            @Html.DisplayFor(modelItem => item.Score)
+             @Html.DisplayFor(modelItem => item.Score)
         </td>
 
         <td>
           
             @{
+            //Other Method  if wanted a seperate rating
+                /*  int num = 0;
+                  Int32.TryParse(item.Stars.Substring(0,1), System.Globalization.NumberStyles.Integer, null, out num);
+                  string[] Start = new string[num];
 
-                int num = 0;
-                Int32.TryParse(item.Stars.Substring(0,1), System.Globalization.NumberStyles.Integer, null, out num);
-                string[] Start = new string[num];
+                  foreach (string print in Start)
+                  {
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                          }
 
-                    foreach (string print in Start)
-                    {
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                        }
-
+                      }
+                      */
+                int num = Convert.ToInt32(Math.Floor(item.Score));
+                int[] items = new int[num];
+                foreach (int las in items)
+                {
+                    <i class="fa fa-star" aria-hidden="true"></i>
                     }
+                }
+
          </td>
 
         <td>
