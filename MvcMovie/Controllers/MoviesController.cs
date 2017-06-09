@@ -4,6 +4,9 @@ using System.Net;
 using System.Web.Mvc;
 using MvcMovie.Models;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace MvcMovie.Controllers
 {
@@ -14,6 +17,7 @@ namespace MvcMovie.Controllers
         // GET: Movies
         public ActionResult Index(string movieGenre, string searchString, string Director, string sortOrder)
         {
+
             ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "Title_desc"  : "";
             ViewBag.RateSortParm = sortOrder == "Score" ? "Rating" : "Score";
 
@@ -45,6 +49,9 @@ namespace MvcMovie.Controllers
                     break;
             }
 
+
+         
+
             if (!string.IsNullOrEmpty(searchString))
             {
                 movies = movies.Where(s => s.Title.Contains(searchString));
@@ -59,6 +66,8 @@ namespace MvcMovie.Controllers
             {
                 movies = movies.Where(x => x.Genre == movieGenre);
             }
+
+
 
             return View(movies);
         }
@@ -89,7 +98,7 @@ namespace MvcMovie.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,Director,ReleaseDate,Genre,Score,Stars,Price,Rating")] Movie movie)
+        public ActionResult Create([Bind(Include = "ID,Title,Director,ReleaseDate,Genre,Score,Stars,Price,Rating,URL")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -121,7 +130,7 @@ namespace MvcMovie.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Title,Director,ReleaseDate,Genre,Score,Stars,Price,Rating")] Movie movie)
+        public ActionResult Edit([Bind(Include = "ID,Title,Director,ReleaseDate,Genre,Score,Stars,Price,Rating,URL")] Movie movie)
         {
             if (ModelState.IsValid)
             {

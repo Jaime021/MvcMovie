@@ -10,6 +10,7 @@
     <h4>Movie</h4>
     <hr />
     <dl class="dl-horizontal">
+        
         <dt>
             @Html.DisplayNameFor(model => model.Title)
         </dt>
@@ -17,7 +18,19 @@
         <dd>
             @Html.DisplayFor(model => model.Title)
         </dd>
+        <dt>
+        </dt>
 
+        <dd>
+            <div class="img-thumbnail">
+                <div class="image">
+                    <img src="@Model.URL" class="img-responsive" alt="Portfolio Image" width="250" height="350">
+                    <a class="overlay" href="@Model.URL">
+
+                    </a>
+                </div>
+            </div>
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Director)
         </dt>
@@ -67,9 +80,6 @@
                 }
             }
 
-            
-           
-
         </dd>
 
 
@@ -87,6 +97,8 @@
         <dd>
             @Html.DisplayFor(model => model.Rating)
         </dd>
+       
+
 
     </dl>
 </div>

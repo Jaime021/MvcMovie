@@ -1,5 +1,12 @@
 ﻿@model IEnumerable<MvcMovie.Models.Movie>
+
+
+@using Newtonsoft.Json;
+@using Newtonsoft.Json.Linq;
+
+    
 @{
+    
     ViewBag.Title = "Index";
    
    
@@ -18,12 +25,19 @@
 
         <input type="submit" value="Filter" />
         </p>
-        
+
+
+    
     }
+
    
 
 <table class="table">
     <tr>
+        <th>
+            Picture
+        </th>
+
         <th>
             @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
@@ -54,12 +68,77 @@
             @Html.ActionLink("Rating", "Index", new { sortOrder = ViewBag.RateSortParm })
         </th>
 
-        <th></th>
+       
     </tr>
 
-@foreach (var item in Model)
+@foreach (var item in Model) 
 {
     <tr>
+    <td> 
+
+        @*
+    @{
+        /*Calling API https://developers.themoviedb.org/3/search/search-people */
+        string apiKey = "dff2b936bb04c8ac7792ea0bde96832f";
+        HttpWebRequest apiRequest = WebRequest.Create("https://api.themoviedb.org/3/search/movie?api_key=" + apiKey + "&query=" + item.Title + "&poster_path") as HttpWebRequest;
+
+
+        //"
+        //  https://api.themoviedb.org/3/search/movie?api_key=dff2b936bb04c8ac7792ea0bde96832f&query={movie+title}
+        //  https://api.themoviedb.org/3/search/movie?api_key=dff2b936bb04c8ac7792ea0bde96832f&query=split&poster_path
+
+        //"href="@item.URL"
+        //          \/ inVq3FRqcYIRl2la8iZikYYxFNR.jpg
+        string name = item.Title;
+        var link = "https://api.themoviedb.org/3/search/movie?api_key=dff2b936bb04c8ac7792ea0bde96832f&query=" + name;
+        var obj = apiRequest;
+        //string links = "https://image.tmdb.org/t/p/w150/" + "&poster_path";
+
+        //var obj = JsonConvert.DeserializeObject<RootObject>(json);
+
+    }
+
+        <div class="img-thumbnail">
+        <div class="image">
+            <img src = "@item.URL" class="img-responsive" alt="Portfolio Image" width="65" height="95">
+            <a class="overlay" >
+
+            </a>                < img src="@item.URL"/>
+
+        </div>
+        </div>
+        *@
+         @{ 
+             WebClient client = new WebClient();
+             string name = item.Title;
+
+             //Stream stream = client.OpenRead("https://api.themoviedb.org/3/search/movie?api_key=dff2b936bb04c8ac7792ea0bde96832f&query=");
+             //StreamReader reader = new StreamReader(stream);
+
+            // Newtonsoft.Json.Linq.JObject jObject = Newtonsoft.Json.Linq.JObject.Parse(reader.ReadLine());
+             //var pic = jObject["results"]["poster_path"];
+
+             //Instead of WriteLine, 2 or 3 lines of code here using WebClient to download the file
+             //  Console.WriteLine((string)jObject["results"][0]["poster_path"]);
+             //  stream.Close();
+
+             //var results = JsonConvert.DeserializeObject<dynamic>("https://api.themoviedb.org/3/search/movie?api_key=dff2b936bb04c8ac7792ea0bde96832f&query=");
+             //var lets = results.poster_path;
+             //var link = "https://image.tmdb.org/t/p/w150/" + lets;
+
+
+        <div class="img-thumbnail">
+            <div class="image">
+                <img src= "@item.URL" class="img-responsive" alt="Portfolio Image" width="65" height="95">
+                <a class="overlay">
+
+                </a>
+            </div>
+        </div>
+
+        }
+            
+</td>
         <td>
             @Html.DisplayFor(modelItem => item.Title)
         </td>
@@ -80,7 +159,7 @@
         <td>
           
             @{
-            //Other Method  if wanted a seperate rating
+                //Other Method  if wanted a seperate rating
                 /*  int num = 0;
                   Int32.TryParse(item.Stars.Substring(0,1), System.Globalization.NumberStyles.Integer, null, out num);
                   string[] Start = new string[num];
@@ -97,8 +176,8 @@
                 foreach (int las in items)
                 {
                     <i class="fa fa-star" aria-hidden="true"></i>
-                    }
                 }
+            }
 
          </td>
 
@@ -108,12 +187,13 @@
         <td>
             @Html.DisplayFor(modelItem => item.Rating)
         </td>
+     
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
-    </tr>
+</tr>
 }
 
 </table>

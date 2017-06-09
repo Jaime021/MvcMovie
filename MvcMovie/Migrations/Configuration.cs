@@ -22,15 +22,16 @@ namespace MvcMovie.Migrations
                 {
                     //Optional Area For the Stars to be inputed, right now just using 
                     // the score to have stars display on the screen 
-                    Title = "When Harry Met Sally",
+                    Title = "Sally",
                     Director = "Bob The Director",
                     ReleaseDate = DateTime.Parse("1989-1-11"),
                     Genre = "Romantic Comedy",
                     Score = 3M,
                     //Stars = "3",
                     Rating = "PG",
-                    Price = 7.99M
-                   
+                    Price = 7.99M,
+                    URL = "http://static.webshopapp.com/shops/014362/files/023641621/256x256x2/i-am-number-four-movie-poster.jpg"
+
                 },
 
                  new Movie
@@ -42,7 +43,12 @@ namespace MvcMovie.Migrations
                      Score = 7.8M,
                      //Stars = "7.8",
                      Rating = "PG",
-                     Price = 8.99M
+                     Price = 8.99M,
+                     URL = "https://pbs.twimg.com/profile_images/683205668417896448/e5kl00Zn.png"
+
+
+
+
                  },
 
                  new Movie
@@ -54,7 +60,8 @@ namespace MvcMovie.Migrations
                      Score = 3.2M,
                      //Stars = "3.2",
                      Rating = "R",
-                     Price = 9.99M
+                     Price = 9.99M,
+                     URL = "https://pbs.twimg.com/profile_images/683205668417896448/e5kl00Zn.png"
                  },
                  
 
@@ -67,7 +74,8 @@ namespace MvcMovie.Migrations
                      Score = 9.2M,
                     // Stars = "9.2",
                      Rating = "R",
-                     Price = 9.99M
+                     Price = 9.99M,
+                     URL = "http://static.webshopapp.com/shops/014362/files/023641621/256x256x2/i-am-number-four-movie-poster.jpg"
                },
 
                new Movie
@@ -79,18 +87,20 @@ namespace MvcMovie.Migrations
                    Score = 8,
                   // Stars = "8",
                    Rating = "G",
-                   Price = 3.99M
+                   Price = 3.99M,
+                   URL = "https://upload.wikimedia.org/wikipedia/en/a/af/The_Godfather%2C_The_Game.jpg"
                },
                new Movie
                {
-                   Title = "The Bomb",
+                   Title = "Bad Boyz",
                    Director = "Michael Bay",
                    ReleaseDate = DateTime.Parse("2017-6-15"),
                    Genre = "Action",
                    Score = 8,
                   // Stars = "9.5",
                    Rating = "R",
-                   Price = 3.99M
+                   Price = 3.99M,
+                   URL = "https://pbs.twimg.com/profile_images/683205668417896448/e5kl00Zn.png"
                }
            );
 
